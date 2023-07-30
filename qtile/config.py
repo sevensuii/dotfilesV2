@@ -32,7 +32,8 @@ import os
 import subprocess
 
 mod = "mod4"
-terminal = "kitty"
+# terminal = "kitty"
+terminal = "alacritty"
 
 @hook.subscribe.startup
 def autostart():
@@ -134,18 +135,18 @@ keys = [
     # Key(["mod1"], "w", lazy.spawn("bash -e ~/.config/qtile/Scripts/wifi_menu"), desc="Launch Wi-fi menu script"),
 ]
 
-groups = [Group(i) for i in "123456789"]
-# groups = [
-#     Group("1", label='web'),
-#     Group("2", label=''),
-#     Group("3", label=''),
-#     Group("4", label=''),
-#     Group("5", label='󰙯'),
-#     Group("6", label='󰙯'),
-#     Group("7", label='󰎅'),
-#     Group("8", label = ''),
-#     #Group("9", label = fa.icons["firefox"]),
-# ]
+# groups = [Group(i) for i in "123456789"]
+groups = [
+    Group("1", label ='󰖟'),
+    Group("2", label ='', layout = "zoomy"),
+    Group("3", label =''),
+    Group("4", label =''),
+    Group("5", label ='󰙯'),
+    Group("6", label ='󰙯'),
+    Group("7", label ='󰎅'),
+    Group("8", label = ''),
+    #Group("9", label = fa.icons["firefox"]),
+]
 
 for i in groups:
     keys.extend(
@@ -184,7 +185,7 @@ layouts = [
     # layout.Tile(),
     # layout.TreeTab(),
     # layout.VerticalTile(),
-    # layout.Zoomy(),
+    layout.Zoomy(margin = 5, columnwidth = 300),
 ]
 
 # widget_defaults = dict(
