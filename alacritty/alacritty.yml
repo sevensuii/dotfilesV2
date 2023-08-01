@@ -10,6 +10,9 @@ window:
   decorations: full
   title: Alacritty@Garuda
   opacity: 0.9
+  padding:
+    x: 10
+    y: 10
   class:
     instance: Alacritty
     general: Alacritty
