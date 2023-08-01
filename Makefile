@@ -9,11 +9,11 @@
 ## Dotfiles commands
 install-symbolic-config: ## Copies repo folders to .config using symbolic links
 	@echo 'Copying dotfiles' \
-        && cp -srf ~/git_repos/dotfilesV2/{alacritty,fish,kitty,neofetch,picom,polybar,qtile,rofi} ~/.config
+        && cp -srf ~/git_repos/dotfilesV2/{alacritty,fish,kitty,neofetch,picom,polybar,qtile,rofi,starship.toml} ~/.config
 
-install-copy-config: ## Copies repo folders to .config using symbolic links
+install-copy-config: ## Copies repo folders to .config
 	@echo 'Copying dotfiles' \
-        && cp -srf ~/git_repos/dotfilesV2/{alacritty,fish,kitty,neofetch,picom,polybar,qtile,rofi} ~/.config
+        && cp -rf ~/git_repos/dotfilesV2/{alacritty,fish,kitty,neofetch,picom,polybar,qtile,rofi,starship.toml} ~/.config
 
 
 help:
