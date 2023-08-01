@@ -11,6 +11,10 @@ if status is-interactive
     
     # Adding the Path for ST-Development Folder in the bashrc format
     #export PATH=$PATH:$HOME/ST-Development/stlink-1.7.0/
+
+    # Export the editor for Ranger
+    export EDITOR='vim'
+    export VISUAL='vim'
     
     # Disable fish_greeting
     set fish_greeting
