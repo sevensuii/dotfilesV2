@@ -106,19 +106,19 @@ keys = [
     Key([], "Print", lazy.spawn("flameshot gui"), desc="Lauch Flameshot GUI"),
     Key([mod], 'Print', lazy.spawn('flameshot screen'), desc='Takes screenshot of current screen'),
     Key([mod, 'shift'], 'Print', lazy.spawn('flameshot full'), desc='Takes screenshot of the entire workspace'),
-    ############
-    # Rofi launcher  #
-    ############
+    ###################
+    # Rofi launcher  and apps   #
+    ###################
     Key(["mod1"], "space", lazy.spawn("rofi -show drun"), desc="Open Rofi launcher"),
     Key(["mod1"], "Tab", lazy.spawn("rofi -show"), desc="Show active windows"),
-
+    # Key([mod], 'r', lazy.spawn("ranger"), desc="Launch ranger terminal file manager"),
     # Key([mod], "space", lazy.spawn("~/git_repos/dotfiles/scripts/kb_layout_change"), desc="Changes the keyboard layout"),
     #############
     # Audio options    #
     #############
-    Key([], "XF86AudioLowerVolume", lazy.spawn("/bin/sh -c '~/git_repos/dotfiles/scripts/default_device_volume.sh output s -5'"), desc="Increase System Volume"),
-    Key([], "XF86AudioRaiseVolume", lazy.spawn("/bin/sh -c '~/git_repos/dotfiles/scripts/default_device_volume.sh output s +5'"), desc="Deccrease System Volume"),
-    Key([], "XF86AudioMute", lazy.spawn("/bin/sh -c '~/git_repos/dotfiles/scripts/default_device_volume.sh output m'"), desc="Mute System Volume"),
+    Key([], "XF86AudioLowerVolume", lazy.spawn("/bin/sh -c '~/git_repos/dotfilesV2/scripts/default_device_volume.sh output s -5'"), desc="Increase System Volume"),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn("/bin/sh -c '~/git_repos/dotfilesV2/scripts/default_device_volume.sh output s +5'"), desc="Deccrease System Volume"),
+    Key([], "XF86AudioMute", lazy.spawn("/bin/sh -c '~/git_repos/dotfilesV2/scripts/default_device_volume.sh output m'"), desc="Mute System Volume"),
     ##################
     # Temporal media keys     #
     ##################
