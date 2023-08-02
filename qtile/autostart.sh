@@ -6,7 +6,7 @@
 cpupower-gui -p
 
 ## (tmp) Set screen layout
-~/aa.sh
+~/screens.sh
 
 ## Start notification daemon
 /usr/bin/dunst &
