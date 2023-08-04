@@ -2,6 +2,8 @@
 
 .DEFAULT_GOAL := help
 
+# Old fonts instalation
+#&& paru -S nerd-fonts-cascadia-code nerd-fonts-fantasque-sans-mono nerd-fonts-jetbrains-mono nerd-fonts-roboto-mono nerd-fonts-ubuntu
 
 ## WM commands
 
@@ -24,7 +26,7 @@ install-paru: ## Installs Paru AUR helper
 
 install-fonts: ## Installs every font used
 	@echo 'Installing fonts' \
-		&& paru -S nerd-fonts-cascadia-code nerd-fonts-fantasque-sans-mono nerd-fonts-jetbrains-mono nerd-fonts-roboto-mono nerd-fonts-ubuntu
+		&& sudo pacman -S ttf-cascadia-code-nerd ttf-fantasque-nerd ttf-jetbrains-mono-nerd ttf-roboto-mono-nerd ttf-ubuntu-nerd
 
 install-aur-packages: ## Installs necessary AUR packages
 	@echo 'Installing AUR packages' \
@@ -50,11 +52,11 @@ install-snapd-packages: ## Installs snapd packages
 		&& sudo snap install phpstorm --classic \
 		&& sudo snap install code --classic
 
-install-all-paru: install-paru install-fonts install-aur-packages ## Executes all paru related commands
+install-all-paru: install-paru install-aur-packages ## Executes all paru related commands
 	
 install-all-snapd: install-snapd install-snapd-packages ## Executes all snapd related commands
 
-setup-everything: install-symbolic-config install-arch-packages install-all-paru install-all-snapd ## Setup as everything should be
+setup-everything: install-symbolic-config install-arch-packages install-fonts install-all-paru install-all-snapd ## Setup as everything should be
 
 help:
 	@echo 'Usage: make [target]'
