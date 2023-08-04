@@ -20,7 +20,7 @@ install-copy-config: ## Copies repo folders to .config
 install-paru: ## Installs Paru AUR helper
 	@echo 'Installing Paru' \
 		&& mkdir -p ~/git_repos \
-		&& git clone https://aur.archlinux.org/paru.git ~/git_repos/paru \
+		&& git clone https://aur.archlinux.org/paru.git ~/git_repos/paru || true \
 		&& cd ~/git_repos/paru \
 		&& makepkg -si
 
@@ -41,7 +41,7 @@ install-arch-packages: ## Installs necessary packages from oficial repositories
 install-snapd: ## Installs snapd for snap packages
 	@echo 'Installing snapd' \
 		&& mkdir -p ~/git_repos \
-		&& git clone https://aur.archlinux.org/snapd.git ~/git_repos/snapd \
+		&& git clone https://aur.archlinux.org/snapd.git ~/git_repos/snapd || true \
 		&& cd ~/git_repos/snapd \
 		&& makepkg -si \
 		&& sudo systemctl enable --now snapd.socket \
