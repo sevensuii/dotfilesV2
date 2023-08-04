@@ -17,7 +17,7 @@ install-copy-config: ## Copies repo folders to .config
 
 install-paru: ## Installs Paru AUR helper
 	@echo 'Installing Paru' \
-		&& mkdir -p ~/git_repos \ 
+		&& mkdir -p ~/git_repos \
 		&& git clone https://aur.archlinux.org/paru.git ~/git_repos/paru \
 		&& cd ~/git_repos/paru \
 		&& makepkg -si
