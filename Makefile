@@ -36,7 +36,7 @@ install-arch-packages: ## Installs necessary packages from oficial repositories
 	@echo 'Installing arch packages' \
 		&& sudo pacman -Syyu neofetch htop nitrogen xorg fish rofi qtile dunst python-dbus linux-headers base base-devel p7zip unzip tar python-pip \
 		papirus-icon-theme cmatrix feh alsa-utils pavucontrol alacritty kitty git vim curl flameshot pulseaudio playerctl scrot brightnessctl bc bashtop acpi \
-		wget shfmt lxsession nautilus starship php composer nano network-manager-applet openvpn gnome-keyring sysstat xdotool arandr
+		wget shfmt lxsession nautilus starship php composer nano network-manager-applet openvpn gnome-keyring sysstat xdotool arandr google-chrome brave-bin firefox
 
 install-snapd: ## Installs snapd for snap packages
 	@echo 'Installing snapd' \
