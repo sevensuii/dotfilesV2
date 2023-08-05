@@ -111,7 +111,7 @@ keys = [
     ###################
     Key(["mod1"], "space", lazy.spawn("rofi -show drun"), desc="Open Rofi launcher"),
     Key(["mod1"], "Tab", lazy.spawn("rofi -show"), desc="Show active windows"),
-    # Key([mod], 'r', lazy.spawn("ranger"), desc="Launch ranger terminal file manager"),
+    Key([mod], 'f', lazy.spawn("alacritty -e ranger"), desc="Launch ranger terminal file manager"),
     # Key([mod], "space", lazy.spawn("~/git_repos/dotfiles/scripts/kb_layout_change"), desc="Changes the keyboard layout"),
     #############
     # Audio options    #
@@ -224,6 +224,7 @@ floating_layout = layout.Floating(
         Match(wm_class="ssh-askpass"),  # ssh-askpass
         Match(title="branchdialog"),  # gitk
         Match(title="pinentry"),  # GPG key password entry
+        Match(title="term_calendar"),  # calcurse as a small widget
     ]
 )
 auto_fullscreen = True
