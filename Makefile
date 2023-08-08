@@ -5,14 +5,14 @@
 # Old fonts instalation
 #&& paru -S nerd-fonts-cascadia-code nerd-fonts-fantasque-sans-mono nerd-fonts-jetbrains-mono nerd-fonts-roboto-mono nerd-fonts-ubuntu
 
-CONFIG=alacritty,dunst,fish,kitty,neofetch,picom,polybar,qtile,rofi,starship.toml
+CONFIG=alacritty,dunst,fish,kitty,neofetch,picom,polybar,qtile,rofi,starship.toml,ranger
 
 ## WM commands
 
 
 ## Dotfiles commands
 install-symbolic-config: ## Copies repo folders to .config using symbolic links
-	@echo 'Copying dotfiles' \
+	@echo 'Sym linking dotfiles' \
         	&& cp -srf ~/git_repos/dotfilesV2/{$(CONFIG)} ~/.config
 
 install-copy-config: ## Copies repo folders to .config
