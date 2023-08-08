@@ -32,14 +32,14 @@ install-fonts: ## Installs every font used
 
 install-aur-packages: ## Installs necessary AUR packages
 	@echo 'Installing AUR packages' \
-		&& paru -S lsd exa cpupower-gui pfetch picom-jonaburg-git cava dry-bin
+		&& paru -S lsd exa cpupower-gui pfetch cava dry-bin
 
 install-arch-packages: ## Installs necessary packages from oficial repositories
 	@echo 'Installing arch packages' \
 		&& sudo pacman -Syyu neofetch htop nitrogen xorg fish rofi qtile dunst python-dbus linux-headers base base-devel p7zip unzip tar python-pip \
-		papirus-icon-theme cmatrix feh alsa-utils pavucontrol alacritty kitty git vim curl flameshot pulseaudio playerctl scrot brightnessctl bc bashtop acpi \
+		papirus-icon-theme cmatrix feh alsa-utils pavucontrol alacritty kitty git vim curl flameshot playerctl scrot brightnessctl bc bashtop acpi \
 		wget shfmt lxsession nautilus starship php composer nano network-manager-applet openvpn gnome-keyring sysstat xdotool arandr google-chrome brave-bin firefox \
-		calcurse
+		calcurse picom polybar ranger ueberzug discord
 
 install-snapd: ## Installs snapd for snap packages
 	@echo 'Installing snapd' \
@@ -55,11 +55,19 @@ install-snapd-packages: ## Installs snapd packages
 		&& sudo snap install phpstorm --classic \
 		&& sudo snap install code --classic
 
+install-docker: ## Installs and configures docker
+	@echo 'Installing docker' \
+		&& sudo pacman -S containerd docker \
+		&& sudo groupadd docker || true \
+		&& echo 'Adding user to docker group' \
+		&& sudo usermod -aG docker $(USER) \
+		&& echo 'Please re-login into the system'
+
 install-all-paru: install-paru install-aur-packages ## Executes all paru related commands
 	
 install-all-snapd: install-snapd install-snapd-packages ## Executes all snapd related commands
 
-setup-everything: install-symbolic-config install-arch-packages install-fonts install-all-paru install-all-snapd ## Setup as everything should be
+setup-everything: install-symbolic-config install-arch-packages unstall-docker install-fonts install-aur-packages install-all-snapd ## Setup as everything should be
 
 help:
 	@echo 'Usage: make [target]'
