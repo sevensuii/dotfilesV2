@@ -32,7 +32,7 @@ install-fonts: ## Installs every font used
 
 install-aur-packages: ## Installs necessary AUR packages
 	@echo 'Installing AUR packages' \
-		&& paru -S lsd exa cpupower-gui pfetch cava dry-bin
+		&& paru -S lsd exa cpupower-gui pfetch cava dry-bin youtube-music-bin
 
 install-arch-packages: ## Installs necessary packages from oficial repositories
 	@echo 'Installing arch packages' \
