@@ -57,7 +57,7 @@ install-snapd-packages: ## Installs snapd packages
 
 install-docker: ## Installs and configures docker
 	@echo 'Installing docker' \
-		&& sudo pacman -S containerd docker \
+		&& sudo pacman -S containerd docker docker-buildx \
 		&& sudo groupadd docker || true \
 		&& echo 'Adding user to docker group' \
 		&& sudo usermod -aG docker $(USER) \
