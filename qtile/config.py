@@ -111,7 +111,7 @@ keys = [
     ###################
     Key(["mod1"], "space", lazy.spawn("rofi -show drun"), desc="Open Rofi launcher"),
     Key(["mod1"], "Tab", lazy.spawn("rofi -show"), desc="Show active windows"),
-    Key([mod], 'f', lazy.spawn("alacritty -e ranger"), desc="Launch ranger terminal file manager"),
+    Key([mod], 'f', lazy.spawn("alacritty -T Ranger -e ranger"), desc="Launch ranger terminal file manager"),
     # Key([mod], "space", lazy.spawn("~/git_repos/dotfiles/scripts/kb_layout_change"), desc="Changes the keyboard layout"),
     #############
     # Audio options    #
