@@ -3,7 +3,7 @@
 #cd ~/.config/qtile/
 
 ## Performance cpu mode
-cpupower-gui -p
+cpupower-gui -b
 
 ## (tmp) Set screen layout
 ~/screens.sh
