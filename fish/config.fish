@@ -41,9 +41,18 @@ if status is-interactive
     # Keeps temps in line
     alias lte='sudo ryzenadj -f 80'
  
+    # TIMETRAP: ALIASES AND FISH ABBREVIATIONS
+    alias tt='t today --ids'
+    #alias tin='t in $1 && tt'
+    alias tout='t out && tt'
+    abbr -a tin --set-cursor -- "t in % && tt"
+
     #set -U fish_color_param blue
     #set fish_greeting
     
     # Starting the starship prompt
      starship init fish | source
+     
+     export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+     export PATH="$PATH:$GEM_HOME/bin"
 end
