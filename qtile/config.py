@@ -33,7 +33,8 @@ import subprocess
 
 mod = "mod4"
 # terminal = "kitty"
-terminal = "alacritty"
+# terminal = "alacritty"
+terminal = "alacritty -e tmux"
 
 @hook.subscribe.startup
 def autostart():
@@ -185,7 +186,7 @@ layouts = [
     # layout.Tile(),
     # layout.TreeTab(),
     # layout.VerticalTile(),
-    layout.Zoomy(margin = 5, columnwidth = 300),
+    #layout.Zoomy(margin = 5, columnwidth = 300),
 ]
 
 # widget_defaults = dict(
