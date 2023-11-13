@@ -3,7 +3,7 @@
 #cd ~/.config/qtile/
 
 ## Performance cpu mode
-cpupower-gui -b
+cpupower-gui -p
 
 ## (tmp) Set screen layout
 ~/screens.sh
@@ -16,6 +16,9 @@ picom &
 
 ## Restore wallpapers
 nitrogen --restore &
+
+## Sets screen timeout to 30 minutes
+xset -dpms && xset s 1800
 
 ## Launch bar
 ~/.config/polybar/launch.sh &
