@@ -67,7 +67,7 @@ install-all-paru: install-paru install-aur-packages ## Executes all paru related
 	
 install-all-snapd: install-snapd install-snapd-packages ## Executes all snapd related commands
 
-setup-everything: install-symbolic-config install-arch-packages unstall-docker install-fonts install-aur-packages install-all-snapd ## Setup as everything should be
+setup-everything: install-symbolic-config install-arch-packages install-docker install-fonts install-aur-packages install-all-snapd ## Setup as everything should be
 
 help:
 	@echo 'Usage: make [target]'
