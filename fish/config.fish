@@ -25,6 +25,10 @@ if status is-interactive
     alias ls="exa --icons"
     #alias vpnLcr="sudo openvpn --config ~/.vpn/dpto.sistemas__ssl_vpn_config.ovpn --auth-user-pass ~/.vpn/pass.txt"
     alias vpnLcr="sudo openvpn --config ~/.vpn/LCRcom_severyn.dorosh__ssl_vpn_config.ovpn --auth-user-pass ~/.vpn/pass.txt"
+    # Aliases
+    if [ -f $HOME/.lcra ]
+      source $HOME/.lcra
+    end
     
     #DOCKER
     alias heos='docker exec -it --user heos heos bash'
