@@ -25,6 +25,9 @@ if status is-interactive
     alias ls="exa --icons"
     #alias vpnLcr="sudo openvpn --config ~/.vpn/dpto.sistemas__ssl_vpn_config.ovpn --auth-user-pass ~/.vpn/pass.txt"
     alias vpnLcr="sudo openvpn --config ~/.vpn/LCRcom_severyn.dorosh__ssl_vpn_config.ovpn --auth-user-pass ~/.vpn/pass.txt"
+    ## For tmux sessions
+    #    alias cmt='bash -c '\''exec -a cmtt cmatrix "$@"'\'' cmt1'
+
     # Aliases
     if [ -f $HOME/.lcra ]
       source $HOME/.lcra
