@@ -5,7 +5,7 @@
 # Old fonts instalation
 #&& paru -S nerd-fonts-cascadia-code nerd-fonts-fantasque-sans-mono nerd-fonts-jetbrains-mono nerd-fonts-roboto-mono nerd-fonts-ubuntu
 
-CONFIG=alacritty,dunst,fish,kitty,neofetch,picom,polybar,qtile,rofi,starship.toml,ranger
+CONFIG=alacritty,dunst,fish,kitty,neofetch,picom,polybar,qtile,rofi,starship.toml,ranger,tmux
 
 ## WM commands
 
@@ -32,14 +32,14 @@ install-fonts: ## Installs every font used
 
 install-aur-packages: ## Installs necessary AUR packages
 	@echo 'Installing AUR packages' \
-		&& paru -S lsd exa cpupower-gui pfetch cava dry-bin youtube-music-bin timetrap
+		&& paru -S lsd exa cpupower-gui pfetch cava dry-bin timetrap ytmdesktop
 
 install-arch-packages: ## Installs necessary packages from oficial repositories
 	@echo 'Installing arch packages' \
 		&& sudo pacman -Syyu neofetch htop nitrogen xorg fish rofi qtile dunst python-dbus linux-headers base base-devel p7zip unzip tar python-pip \
 		papirus-icon-theme cmatrix feh alsa-utils pavucontrol alacritty kitty git vim curl flameshot playerctl scrot brightnessctl bc bashtop acpi \
 		wget shfmt lxsession nautilus starship php composer nano network-manager-applet openvpn gnome-keyring sysstat xdotool arandr google-chrome brave-bin firefox \
-		calcurse picom polybar ranger ueberzug discord telegram-desktop cameractrls tmux
+		calcurse picom polybar ranger ueberzug discord telegram-desktop cameractrls tmux sshpass
 
 install-snapd: ## Installs snapd for snap packages
 	@echo 'Installing snapd' \
