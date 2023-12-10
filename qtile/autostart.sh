@@ -18,7 +18,7 @@ picom &
 nitrogen --restore &
 
 ## Sets screen timeout to 30 minutes
-xset -dpms && xset s 1800
+xset -dpms && xset s 2700
 
 ## Launch bar
 ~/.config/polybar/launch.sh &

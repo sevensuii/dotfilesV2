@@ -20,9 +20,9 @@ echo $screens
 
 if [[ $name == $server ]]; then
     for m in $screens; do
-        if [[ 'DP-0' == $m ]]; then
+        if [[ 'HDMI-0' == $m ]]; then
             MONITOR=$m TRAY_POS=right polybar main &
-        elif [[ 'HDMI-0' == $m ]]; then
+        elif [[ 'DP-0' == $m ]]; then
             MONITOR=$m TRAY_POS=none polybar secondary &
         fi
     done
