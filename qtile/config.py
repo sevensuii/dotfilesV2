@@ -99,8 +99,8 @@ keys = [
     #####################
     # Switch focus of monitors      #
     #####################
-    Key([mod], "period", lazy.prev_screen()),
-    Key([mod], "comma", lazy.next_screen()),
+    Key([mod], "period", lazy.next_screen()),
+    Key([mod], "comma", lazy.prev_screen()),
     ############
     # Screenshots     #
     ############
