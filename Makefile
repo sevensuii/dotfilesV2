@@ -5,7 +5,7 @@
 # Old fonts instalation
 #&& paru -S nerd-fonts-cascadia-code nerd-fonts-fantasque-sans-mono nerd-fonts-jetbrains-mono nerd-fonts-roboto-mono nerd-fonts-ubuntu
 
-CONFIG=alacritty,dunst,fish,kitty,neofetch,picom,polybar,qtile,rofi,starship.toml,ranger,tmux
+CONFIG=alacritty,dunst,fish,kitty,neofetch,picom,polybar,qtile,rofi,starship.toml,ranger,tmux,nvim
 
 ## WM commands
 
@@ -39,7 +39,12 @@ install-arch-packages: ## Installs necessary packages from oficial repositories
 		&& sudo pacman -Syyu neofetch htop nitrogen xorg fish rofi qtile dunst python-dbus linux-headers base base-devel p7zip unzip tar python-pip \
 		papirus-icon-theme cmatrix feh alsa-utils pavucontrol alacritty kitty git vim curl flameshot playerctl scrot brightnessctl bc bashtop acpi \
 		wget shfmt lxsession nautilus starship php composer nano network-manager-applet openvpn gnome-keyring sysstat xdotool arandr google-chrome brave-bin firefox \
-		calcurse picom polybar ranger ueberzug discord telegram-desktop cameractrls tmux sshpass
+		calcurse picom polybar ranger ueberzug discord telegram-desktop cameractrls tmux sshpass ripgrep npm
+
+install-tmux-conf: ## Setups necessary repos for tmux
+	@echo 'Cloning tmux-tpm' \
+		git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm \
+		echo 'Open tmux and execute prefix + I'
 
 install-snapd: ## Installs snapd for snap packages
 	@echo 'Installing snapd' \
