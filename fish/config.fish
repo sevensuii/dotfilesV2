@@ -1,24 +1,29 @@
 if status is-interactive
+    and not set -q TMUX
+    tmux
+end
+
+if status is-interactive
     # Run "neofetch" for System info everytime fish is opened
-    neofetch
-    
+    #neofetch
+
     # Run "pfetch" for System info everytime fish is opened
     # pfetch
-    
+
     # Adding the Path for ST-Development Folder
-    set -gx fish_user_paths ~/.local/bin/ ~/.local/share/nvim/lsp_servers/python/node_modules/.bin ~/.local/share/nvim/lsp_servers/rust ~/.cargo/bin ~/.local/share/nvim/lsp_servers/sumneko_lua/extension/server/bin 
+    set -gx fish_user_paths ~/.local/bin/ ~/.local/share/nvim/lsp_servers/python/node_modules/.bin ~/.local/share/nvim/lsp_servers/rust ~/.cargo/bin ~/.local/share/nvim/lsp_servers/sumneko_lua/extension/server/bin
     set -gx LD_LIBRARY_PATH /usr/local/lib
-    
+
     # Adding the Path for ST-Development Folder in the bashrc format
     #export PATH=$PATH:$HOME/ST-Development/stlink-1.7.0/
 
     # Export the editor for Ranger
     export EDITOR='vim'
     export VISUAL='vim'
-    
+
     # Disable fish_greeting
     set fish_greeting
-    
+
     # Adding Aliases
     #alias ll="ls -lah --color=auto"
     alias ll="lsd -lah"
@@ -30,9 +35,9 @@ if status is-interactive
 
     # Aliases
     if [ -f $HOME/.lcra ]
-      source $HOME/.lcra
+        source $HOME/.lcra
     end
-    
+
     #DOCKER
     alias heos='docker exec -it --user heos heos bash'
     alias heos-run='docker exec -it --user heos heos '
@@ -47,7 +52,7 @@ if status is-interactive
 
     # Keeps temps in line
     alias lte='sudo ryzenadj -f 80'
- 
+
     # TIMETRAP: ALIASES AND FISH ABBREVIATIONS
     alias tt='t today --ids'
     #alias tin='t in $1 && tt'
@@ -56,10 +61,10 @@ if status is-interactive
 
     #set -U fish_color_param blue
     #set fish_greeting
-    
+
     # Starting the starship prompt
-     starship init fish | source
-     
-     export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
-     export PATH="$PATH:$GEM_HOME/bin"
+    starship init fish | source
+
+    export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+    export PATH="$PATH:$GEM_HOME/bin"
 end
