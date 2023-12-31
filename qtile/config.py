@@ -33,8 +33,8 @@ import subprocess
 
 mod = "mod4"
 # terminal = "kitty"
-# terminal = "alacritty"
-terminal = "alacritty -e tmux"
+terminal = "alacritty"
+# terminal = "alacritty -e tmux"
 
 @hook.subscribe.startup
 def autostart():
