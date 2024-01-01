@@ -5,7 +5,7 @@
 # Old fonts instalation
 #&& paru -S nerd-fonts-cascadia-code nerd-fonts-fantasque-sans-mono nerd-fonts-jetbrains-mono nerd-fonts-roboto-mono nerd-fonts-ubuntu
 
-CONFIG=alacritty,dunst,fish,kitty,neofetch,picom,polybar,qtile,rofi,starship.toml,ranger,tmux,nvim
+CONFIG=alacritty,dunst,fish,kitty,neofetch,picom,polybar,qtile,rofi,starship.toml,ranger,tmux
 
 ## WM commands
 
@@ -36,10 +36,14 @@ install-aur-packages: ## Installs necessary AUR packages
 
 install-arch-packages: ## Installs necessary packages from oficial repositories
 	@echo 'Installing arch packages' \
-		&& sudo pacman -Syyu neofetch htop nitrogen xorg fish rofi qtile dunst python-dbus linux-headers base base-devel p7zip unzip tar python-pip \
-		papirus-icon-theme cmatrix feh alsa-utils pavucontrol alacritty kitty git vim curl flameshot playerctl scrot brightnessctl bc bashtop acpi \
+		&& sudo pacman -Syyu neofetch htop nitrogen fish rofi qtile dunst python-dbus p7zip unzip tar python-pip \
+		papirus-icon-theme cmatrix feh pavucontrol alacritty kitty git vim curl flameshot playerctl brightnessctl bc bashtop acpi \
 		wget shfmt lxsession nautilus starship php composer nano network-manager-applet openvpn gnome-keyring sysstat xdotool arandr google-chrome brave-bin firefox \
 		calcurse picom polybar ranger ueberzug discord telegram-desktop cameractrls tmux sshpass ripgrep npm
+
+install-basic-packages: ## Installs stuff like xorg...
+	@echo 'Installing basic stuff' \
+		&& sudo pacman -S linux-headers base base-devel alsa-utils
 
 install-tmux-conf: ## Setups necessary repos for tmux
 	@echo 'Cloning tmux-tpm' \
