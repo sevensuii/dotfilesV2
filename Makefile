@@ -5,7 +5,7 @@
 # Old fonts instalation
 #&& paru -S nerd-fonts-cascadia-code nerd-fonts-fantasque-sans-mono nerd-fonts-jetbrains-mono nerd-fonts-roboto-mono nerd-fonts-ubuntu
 
-CONFIG=alacritty,dunst,fish,kitty,neofetch,picom,polybar,qtile,rofi,starship.toml,ranger,tmux
+CONFIG=alacritty,dunst,fish,kitty,neofetch,picom,polybar,qtile,rofi,starship.toml,ranger,tmux,nvim
 
 ## WM commands
 
@@ -32,14 +32,15 @@ install-fonts: ## Installs every font used
 
 install-aur-packages: ## Installs necessary AUR packages
 	@echo 'Installing AUR packages' \
-		&& paru -S lsd exa cpupower-gui pfetch cava dry-bin timetrap ytmdesktop
+		&& paru -S lsd exa cpupower-gui pfetch cava dry-bin
 
 install-arch-packages: ## Installs necessary packages from oficial repositories
 	@echo 'Installing arch packages' \
 		&& sudo pacman -Syyu neofetch htop nitrogen fish rofi qtile dunst python-dbus p7zip unzip tar python-pip \
 		papirus-icon-theme cmatrix feh pavucontrol alacritty kitty git vim neovim curl flameshot playerctl brightnessctl bc bashtop acpi \
 		wget shfmt lxsession nautilus starship php composer nano network-manager-applet openvpn gnome-keyring sysstat xdotool arandr google-chrome brave-bin firefox \
-		calcurse picom polybar ranger ueberzug discord telegram-desktop cameractrls tmux sshpass ripgrep npm
+		calcurse picom polybar ranger ueberzug discord telegram-desktop cameractrls tmux sshpass ripgrep npm ruby rubygems \
+		&& gem install timetrap
 
 install-basic-packages: ## Installs stuff like xorg...
 	@echo 'Installing basic stuff' \
@@ -47,8 +48,8 @@ install-basic-packages: ## Installs stuff like xorg...
 
 install-tmux-conf: ## Setups necessary repos for tmux
 	@echo 'Cloning tmux-tpm' \
-		git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm \
-		echo 'Open tmux and execute prefix + I'
+		&& git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm \
+		&& echo 'Open tmux and execute prefix + I'
 
 install-snapd: ## Installs snapd for snap packages
 	@echo 'Installing snapd' \
@@ -57,12 +58,14 @@ install-snapd: ## Installs snapd for snap packages
 		&& cd ~/git_repos/snapd \
 		&& makepkg -si \
 		&& sudo systemctl enable --now snapd.socket \
+		&& sudo systemctl start snapd \
 		&& sudo ln -s /var/lib/snapd/snap /snap
 
 install-snapd-packages: ## Installs snapd packages
 	@echo 'Installing snapd packages' \
 		&& sudo snap install phpstorm --classic \
-		&& sudo snap install code --classic
+		&& sudo snap install code --classic \
+		&& sudo snap install youtube-music-desktop-app
 
 install-docker: ## Installs and configures docker
 	@echo 'Installing docker' \
