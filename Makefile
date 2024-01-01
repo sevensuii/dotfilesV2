@@ -37,7 +37,7 @@ install-aur-packages: ## Installs necessary AUR packages
 install-arch-packages: ## Installs necessary packages from oficial repositories
 	@echo 'Installing arch packages' \
 		&& sudo pacman -Syyu neofetch htop nitrogen fish rofi qtile dunst python-dbus p7zip unzip tar python-pip \
-		papirus-icon-theme cmatrix feh pavucontrol alacritty kitty git vim curl flameshot playerctl brightnessctl bc bashtop acpi \
+		papirus-icon-theme cmatrix feh pavucontrol alacritty kitty git vim neovim curl flameshot playerctl brightnessctl bc bashtop acpi \
 		wget shfmt lxsession nautilus starship php composer nano network-manager-applet openvpn gnome-keyring sysstat xdotool arandr google-chrome brave-bin firefox \
 		calcurse picom polybar ranger ueberzug discord telegram-desktop cameractrls tmux sshpass ripgrep npm
 
