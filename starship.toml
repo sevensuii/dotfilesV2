@@ -94,12 +94,12 @@ always_show_remote = true
 
 [git_status]
 # style = "bg:#FCA17D"
-modified = "($count) "
-deleted = "($count) "
-behind = "($count) "
-ahead = "($count) "
-staged = "($count) "
-untracked = "($count) " 
+modified = " ($count) "
+deleted = " ($count) "
+behind = " ($count) "
+ahead = " ($count) "
+staged = " ($count) "
+untracked = " ($count) " 
 format = '[$all_status$ahead_behind ]($style)'
 
 [golang]
