@@ -32,6 +32,9 @@ if status is-interactive
     alias vpnLcr="sudo openvpn --config ~/.vpn/LCRcom_severyn.dorosh__ssl_vpn_config.ovpn --auth-user-pass ~/.vpn/pass.txt"
     ## For tmux sessions
     #    alias cmt='bash -c '\''exec -a cmtt cmatrix "$@"'\'' cmt1'
+    alias push-redmines="cd ~/Documentos/redmine_doc/ && git add * && git commit -m 'new docs' && git push"
+    alias pull-redmines="cd ~/Documentos/redmine_doc/ && git pull"
+    alias redmines="cd ~/Documentos/redmine_doc/ && ranger"
 
     # Aliases
     if [ -f $HOME/.lcra ]
