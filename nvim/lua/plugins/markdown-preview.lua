@@ -1,3 +1,3 @@
 return {
-    "iamcco/markdown-preview",
+    "iamcco/markdown-preview.nvim",
 }
