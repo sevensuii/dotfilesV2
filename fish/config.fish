@@ -35,6 +35,10 @@ if status is-interactive
     alias push-redmines="cd ~/Documentos/redmine_doc/ && git add * && git commit -m 'new docs' && git push"
     alias pull-redmines="cd ~/Documentos/redmine_doc/ && git pull"
     alias redmines="cd ~/Documentos/redmine_doc/ && ranger"
+    abbr -a nredmine --set-cursor -- "nvim RM%.md"
+
+    alias lgit="lazygit"
+
 
     # Aliases
     if [ -f $HOME/.lcra ]
@@ -61,6 +65,8 @@ if status is-interactive
     #alias tin='t in $1 && tt'
     alias tout='t out && tt'
     abbr -a tin --set-cursor -- "t in % && tt"
+
+
 
     #set -U fish_color_param blue
     #set fish_greeting
