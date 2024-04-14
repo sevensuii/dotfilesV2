@@ -38,6 +38,7 @@ if status is-interactive
     abbr -a nredmine --set-cursor -- "nvim RM%.md"
 
     alias lgit="lazygit"
+    abbr -a ktw --set-cursor -- "icat (~/Documentos/unsorted-wallpapers/print_random_wallpaper.py h%)"
 
 
     # Aliases
@@ -61,10 +62,10 @@ if status is-interactive
     alias lte='sudo ryzenadj -f 80'
 
     # TIMETRAP: ALIASES AND FISH ABBREVIATIONS
-    alias tt='t today --ids'
+    alias tt='clear && t today --ids'
     #alias tin='t in $1 && tt'
-    alias tout='t out && tt'
-    abbr -a tin --set-cursor -- "t in % && tt"
+    alias tout='clear && t out && tt'
+    abbr -a tin --set-cursor -- "clear && t in % && tt"
 
 
 
