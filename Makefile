@@ -39,7 +39,7 @@ install-arch-packages: ## Installs necessary packages from oficial repositories
 		&& sudo pacman -Syyu neofetch htop nitrogen fish rofi qtile dunst python-dbus p7zip unzip tar python-pip \
 		papirus-icon-theme cmatrix feh pavucontrol alacritty kitty git vim neovim curl flameshot playerctl brightnessctl bc bashtop acpi \
 		wget shfmt lxsession nautilus starship php composer nano network-manager-applet openvpn gnome-keyring sysstat xdotool arandr google-chrome brave-bin firefox \
-		calcurse picom polybar ranger ueberzug discord telegram-desktop cameractrls tmux sshpass ripgrep npm ruby rubygems lazygit shell-color-scripts \
+		calcurse picom polybar ranger ueberzug discord telegram-desktop cameractrls tmux sshpass ripgrep npm ruby rubygems lazygit shell-color-scripts debugedit \
 		&& gem install timetrap
 
 install-basic-packages: ## Installs stuff like xorg...
