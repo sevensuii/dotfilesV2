@@ -39,6 +39,7 @@ if status is-interactive
 
     alias lgit="lazygit"
     abbr -a ktw --set-cursor -- "icat (~/Documentos/unsorted-wallpapers/print_random_wallpaper.py h%)"
+    abbr -a cktw --set-cursor -- "clear && icat (~/Documentos/unsorted-wallpapers/print_random_wallpaper.py h%)"
 
 
     # Aliases
