@@ -1,0 +1,8 @@
+"--- MACROS ---"
+let @r="i<!-- markdownlint-disable -->\<Esc> us uw2o\<Esc>"
+let @t="i```sql\<CR>\<CR>```\<Esc>k"
+let @y="i```sh\<CR>\<CR>```\<Esc>k"
+let @u="i```log\<CR>\<CR>```\<Esc>k"
+let @d="idd();\<Esc>hi$"
+let @l="ierror_log(print_r().PHP_EOL, 3, '/home/sevensuii/tmp.log');\<Esc>40hi$"
+let @w="A;\<Esc>a"
