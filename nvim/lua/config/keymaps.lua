@@ -55,9 +55,10 @@ vim.keymap.set("n", "<C-M-l>", function()
     harpoon:list():select(4)
 end)
 
-vim.keymap.set("n", "<leader>H", function()
-    require("alpha").start(false, require("alpha").default_config)
-end, { noremap = true, desc = "Homescreen" })
+-- vim.keymap.set("n", "<leader>H", function()
+--     require("alpha").start(false, require("alpha").default_config)
+-- end, { noremap = true, desc = "Homescreen" })
+vim.api.nvim_set_keymap("n", "<leader>H", ":Dashboard<CR>", { noremap = true, desc = "Dashboard" })
 
 -- File browser
 vim.api.nvim_set_keymap(
