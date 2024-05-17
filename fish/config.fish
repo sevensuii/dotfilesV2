@@ -47,6 +47,11 @@ if status is-interactive
         source $HOME/.lcra
     end
 
+    alias nheos='cd /home/heos && nvim'
+    alias ndeimos='cd /app/deimos && nvim'
+    alias ngea='cd /app/gea && nvim'
+    alias ndotfiles='cd ~/git_repos/dotfilesV2 && nvim'
+
     #DOCKER
     alias heos='docker exec -it --user heos heos bash'
     alias heos-run='docker exec -it --user heos heos '
