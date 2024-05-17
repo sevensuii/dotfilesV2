@@ -28,7 +28,7 @@ vim.keymap.set("n", "<leader>h", function()
 end, { desc = "Show harpoons" })
 
 vim.keymap.set("n", "<leader>a", function()
-    harpoon:list():append()
+    harpoon:list():add()
 end, { desc = "Add harpoon mark" })
 
 vim.keymap.set("n", "<leader>d", function()
@@ -38,6 +38,10 @@ end, { desc = "Del harpoon mark" })
 vim.keymap.set("n", "<C-e>", function()
     harpoon.ui:toggle_quick_menu(harpoon:list())
 end)
+
+vim.keymap.set("n", "<leader>D", function()
+    harpoon:list():clear()
+end, { desc = "Clear harpoon marks" })
 
 vim.keymap.set("n", "<C-M-h>", function()
     harpoon:list():select(1)
