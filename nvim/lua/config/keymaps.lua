@@ -72,6 +72,9 @@ vim.api.nvim_set_keymap(
     { noremap = true, desc = "File browser" }
 )
 
+-- Go to definition remap (doesnt work for now because is too fast for file to load)
+-- vim.api.nvim_set_keymap("n", "gv", ":vsplit<CR>gd", { noremap = true, silent = true, desc = "Definition Right Split" })
+
 -- Git branches
 vim.api.nvim_set_keymap("n", "<leader>gB", ":Telescope git_branches<CR>", { noremap = true, desc = "Branches" })
 
