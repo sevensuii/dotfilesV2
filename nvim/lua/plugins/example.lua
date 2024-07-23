@@ -154,6 +154,8 @@ return {
         "typescript",
         "vim",
         "yaml",
+        "sql",
+        "php",
       },
     },
   },
@@ -262,4 +264,9 @@ return {
       })
     end,
   },
+
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    config = true
+  }
 }
