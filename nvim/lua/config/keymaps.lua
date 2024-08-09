@@ -59,6 +59,9 @@ vim.keymap.set("n", "<C-M-l>", function()
     harpoon:list():select(4)
 end)
 
+vim.keymap.set("n", "gv", "<cmd>tab split | lua vim.lsp.buf.definition()<CR>", { desc = "Open definition in new tab" })
+vim.keymap.set("n", "gf", ":lua vim.lsp.buf.references()<CR>", { desc = "Show references" })
+
 -- vim.keymap.set("n", "<leader>H", function()
 --     require("alpha").start(false, require("alpha").default_config)
 -- end, { noremap = true, desc = "Homescreen" })
@@ -71,6 +74,28 @@ vim.api.nvim_set_keymap(
     ":Telescope file_browser path=%:p:h select_buffer=true<CR>",
     { noremap = true, desc = "File browser" }
 )
+
+-- Copy code lines
+vim.api.nvim_set_keymap("n", "<leader>cy", ":call setreg('+', expand('%:p') .. '::' .. line('.'))<CR>", { noremap = true, desc = "Copy file path and line"})
+vim.api.nvim_set_keymap("n", "<leader>cY", ":call setreg('+', expand('%:t'))<CR>", { noremap = true, desc = "Copy filename"})
+
+-- Tab management
+vim.api.nvim_set_keymap('n', "<leader><Tab>m", "<Nop>", { noremap = true, desc = "Move tabs" })
+vim.api.nvim_set_keymap('n', "<leader><Tab>ml", ":tabmove +1<CR>", { noremap = true, desc = "Move tab right" })
+vim.api.nvim_set_keymap('n', "<leader><Tab>mh", ":tabmove -1<CR>", { noremap = true, desc = "Move tab left" })
+vim.api.nvim_set_keymap('n', "<leader><Tab>mf", ":tabmove 0<CR>", { noremap = true, desc = "Move tab first pos" })
+-- vim.api.nvim_set_keymap('n', "<leader><Tab>L", ":tabmove 0<CR>", { noremap = true, desc = "Move tab last pos" })
+vim.api.nvim_set_keymap('n', "<leader><Tab>s", ":tabs<CR>", { noremap = true, desc = "Show tabs" })
+
+vim.api.nvim_set_keymap("n", "<A-1>", "1gt", {})
+vim.api.nvim_set_keymap("n", "<A-2>", "2gt", {})
+vim.api.nvim_set_keymap("n", "<A-3>", "3gt", {})
+vim.api.nvim_set_keymap("n", "<A-4>", "4gt", {})
+vim.api.nvim_set_keymap("n", "<A-5>", "5gt", {})
+vim.api.nvim_set_keymap("n", "<A-6>", "6gt", {})
+vim.api.nvim_set_keymap("n", "<A-7>", "7gt", {})
+vim.api.nvim_set_keymap("n", "<A-8>", "8gt", {})
+vim.api.nvim_set_keymap("n", "<A-9>", "9gt", {})
 
 -- Go to definition remap (doesnt work for now because is too fast for file to load)
 -- vim.api.nvim_set_keymap("n", "gv", ":vsplit<CR>gd", { noremap = true, silent = true, desc = "Definition Right Split" })
