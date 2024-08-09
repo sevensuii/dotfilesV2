@@ -92,6 +92,10 @@ return {
       servers = {
         -- pyright will be automatically installed with mason and loaded with lspconfig
         pyright = {},
+        intelephense = {},
+        phpactor = {},
+        marksman = {},
+        twiggy_language_server = {},
       },
     },
   },
