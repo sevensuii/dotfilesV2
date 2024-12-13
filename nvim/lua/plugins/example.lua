@@ -67,7 +67,18 @@ return {
         layout_config = { prompt_position = "top" },
         sorting_strategy = "ascending",
         winblend = 0,
+        file_ignore_patterns = { "node_modules", "/app/deimos/vendor/", "/app/deimos/var/" },
       },
+      -- pickers = {
+      --   find_files = {
+      --     find_command = { "fd", "--type", "f", "--color", "never", "--no-require-git" }
+      --   },
+      --   live_grep = {
+      --     additional_args = function(opts)
+      --       return vim.list_extend({ "--hidden", "--ignore-files vendor" }, opts.additional_args or {})
+      --     end
+      --   },
+      -- },
     },
   },
 
@@ -92,6 +103,7 @@ return {
       servers = {
         -- pyright will be automatically installed with mason and loaded with lspconfig
         pyright = {},
+        pylint = {},
         intelephense = {},
         phpactor = {},
         marksman = {},
@@ -160,6 +172,7 @@ return {
         "yaml",
         "sql",
         "php",
+        "angular",
       },
     },
   },
@@ -213,6 +226,11 @@ return {
         "shellcheck",
         "shfmt",
         "flake8",
+        "phpactor",
+        "intelephense",
+        "phpstan",
+        "pyright",
+        "pylint",
       },
     },
   },
