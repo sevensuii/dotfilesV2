@@ -65,7 +65,7 @@ vim.keymap.set("n", "gf", ":lua vim.lsp.buf.references()<CR>", { desc = "Show re
 -- vim.keymap.set("n", "<leader>H", function()
 --     require("alpha").start(false, require("alpha").default_config)
 -- end, { noremap = true, desc = "Homescreen" })
-vim.api.nvim_set_keymap("n", "<leader>H", ":Dashboard<CR>", { noremap = true, desc = "Dashboard" })
+vim.api.nvim_set_keymap("n", "<leader>H", ":lua Snacks.dashboard()<CR>", { noremap = true, desc = "Dashboard" })
 
 -- File browser
 vim.api.nvim_set_keymap(

@@ -134,39 +134,46 @@ return {
         },
         keys = { { "<leader>z", "<cmd>ZenMode<cr>", desc = "Zen Mode" } },
     },
+  {
+    "folke/snacks.nvim",
+    opts = {
+      dashboard = {
+        sections = {
+          { section = "terminal", cmd = "pokemon-colorscripts -r -b --no-title; sleep .3; ", random = 10, pane = 1, indent = 1, height = 30, padding = 5 },
+          { section = "terminal", cmd = "echo ' :' $(pwd)", pane = 1, indent = 2 },
+          -- { section = "terminal", cmd = "echo 'code:' $(pwd) | cowsay", random = 10, pane = 1, indent = 1},
+          -- { section = "terminal", cmd = "pwd", pane = 1 },
+          { section = "header", pane = 2 },
+          { icon = " ", title = "Keymaps", section = "keys", indent = 2, padding = 1, pane = 2 },
+          { icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 1, pane = 2 },
+          -- { icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1, pane = 2 },
+          { section = "startup" },
+        },
+        preset = {
+          header = [[
 
-    {
-        "nvimdev/dashboard-nvim",
-        event = "VimEnter",
-        opts = function(_, opts)
-            -- Bug Slayer
-            --             local logo = [[
-            --  ▄▄▄▄    █    ██   ▄████      ██████  ██▓    ▄▄▄     ▓██   ██▓▓█████  ██▀███
-            -- ▓█████▄  ██  ▓██▒ ██▒ ▀█▒   ▒██    ▒ ▓██▒   ▒████▄    ▒██  ██▒▓█   ▀ ▓██ ▒ ██▒
-            -- ▒██▒ ▄██▓██  ▒██░▒██░▄▄▄░   ░ ▓██▄   ▒██░   ▒██  ▀█▄   ▒██ ██░▒███   ▓██ ░▄█ ▒
-            -- ▒██░█▀  ▓▓█  ░██░░▓█  ██▓     ▒   ██▒▒██░   ░██▄▄▄▄██  ░ ▐██▓░▒▓█  ▄ ▒██▀▀█▄
-            -- ░▓█  ▀█▓▒▒█████▓ ░▒▓███▀▒   ▒██████▒▒░██████▒▓█   ▓██▒ ░ ██▒▓░░▒████▒░██▓ ▒██▒
-            -- ░▒▓███▀▒░▒▓▒ ▒ ▒  ░▒   ▒    ▒ ▒▓▒ ▒ ░░ ▒░▓  ░▒▒   ▓▒█░  ██▒▒▒ ░░ ▒░ ░░ ▒▓ ░▒▓░
-            -- ▒░▒   ░ ░░▒░ ░ ░   ░   ░    ░ ░▒  ░ ░░ ░ ▒  ░ ▒   ▒▒ ░▓██ ░▒░  ░ ░  ░  ░▒ ░ ▒░
-            --  ░    ░  ░░░ ░ ░ ░ ░   ░    ░  ░  ░    ░ ░    ░   ▒   ▒ ▒ ░░     ░     ░░   ░
-            --  ░         ░           ░          ░      ░  ░     ░  ░░ ░        ░  ░   ░
-            --       ░                                               ░ ░
-            --
-            -- ]]
-
-            -- NeoVim
-            local logo = [[
-       ████ ██████           █████      ██                     
-      ███████████             █████                             
-      █████████ ███████████████████ ███   ███████████   
-     █████████  ███    █████████████ █████ ██████████████   
-    █████████ ██████████ █████████ █████ █████ ████ █████   
-  ███████████ ███    ███ █████████ █████ █████ ████ █████  
- ██████  █████████████████████ ████ █████ █████ ████ ██████ 
-        ]]
-
-            logo = string.rep("\n", 8) .. logo .. "\n\n"
-            opts.config.header = vim.split(logo, "\n")
-        end,
+    ██╗      █████╗ ███████╗██╗   ██╗██╗   ██╗██╗███╗   ███╗          Z
+    ██║     ██╔══██╗╚══███╔╝╚██╗ ██╔╝██║   ██║██║████╗ ████║      Z
+    ██║     ███████║  ███╔╝  ╚████╔╝ ██║   ██║██║██╔████╔██║   z
+    ██║     ██╔══██║ ███╔╝    ╚██╔╝  ╚██╗ ██╔╝██║██║╚██╔╝██║ z
+    ███████╗██║  ██║███████╗   ██║    ╚████╔╝ ██║██║ ╚═╝ ██║
+    ╚══════╝╚═╝  ╚═╝╚══════╝   ╚═╝     ╚═══╝  ╚═╝╚═╝     ╚═╝
+        ]],
+        -- stylua: ignore
+        ---@type snacks.dashboard.Item[]
+        keys = {
+          { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
+          { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
+          { icon = " ", key = "g", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
+          { icon = " ", key = "r", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
+          { icon = " ", key = "c", desc = "Config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
+          { icon = " ", key = "s", desc = "Restore Session", section = "session" },
+          { icon = " ", key = "x", desc = "Lazy Extras", action = ":LazyExtras" },
+          { icon = "󰒲 ", key = "l", desc = "Lazy", action = ":Lazy" },
+          { icon = " ", key = "q", desc = "Quit", action = ":qa" },
+        },
+        },
+      },
     },
+  },
 }
