@@ -4,6 +4,11 @@ vim.opt.timeoutlen = 1000
 vim.opt.ttimeoutlen = 0
 
 local nvim_lsp = require("lspconfig")
+require("workspaces").setup({
+  hooks = {
+    open = {"lua Snacks.dashboard()", "pwd"},
+  }
+})
 
 nvim_lsp.intelephense.setup({
     on_init = function(client)
@@ -28,4 +33,5 @@ require("treesitter-context").setup({
 
 vim.cmd([[
 source ~/.config/nvim/macros
+cmap wo WorkspacesOpen 
 ]])
